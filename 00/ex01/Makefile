@@ -14,10 +14,10 @@ On_Green=\033[42m
 
 #----------------------------MANDATORY----------------------------
 
-NAME		= megaphone
+NAME		= phonebook
 
 SRC_DIR		= .
-SRCS		= $(patsubst %, $(SRC_DIR)/%, main.cpp)
+SRCS		= $(patsubst %, $(SRC_DIR)/%, main.cpp contact.cpp phonebook.cpp)
 OBJ_DIR		= obj
 OBJS		= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
@@ -28,7 +28,7 @@ OBJS		= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 $(NAME):	$(OBJS)
 			@$(CC) $(CFLAGS) $(OBJS) -o $@ $(LIB)
-			@echo "$(Green)*** $(UGreen)Successfully compiling $(NAME)$(Green) ***$(nc)"
+			@echo "$(Green)*** $(UGreen)Successfully compiled $(NAME)$(Green) ***$(nc)"
 
 all:		$(NAME)
 
