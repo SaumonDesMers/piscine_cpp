@@ -13,10 +13,10 @@ UGreen=\033[4;32m
 
 #----------------------------MANDATORY----------------------------
 
-NAME		= phonebook
+NAME		= test
 
 SRC_DIR		= .
-SRCS		= $(patsubst %, $(SRC_DIR)/%, main.cpp contact.cpp phonebook.cpp)
+SRCS		= $(patsubst %, $(SRC_DIR)/%, tests.cpp Account.cpp)
 OBJ_DIR		= obj
 OBJS		= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 

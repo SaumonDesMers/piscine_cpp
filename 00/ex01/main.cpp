@@ -4,13 +4,13 @@
 #include "phoneBook.hpp"
 
 bool isCorrectNb(const std::string& str) {
-	for (int i=0; i < str.size(); i++)
+	for (int i=0; str[i]; i++)
 		if (str[i] != '-' && !isdigit(str[i]))
 			return false;
 	return true;
 }
 
-int main(int ac, char **av)
+int main()
 {
 	phoneBook phoneBook;
 	std::string input ("");
