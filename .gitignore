@@ -1,9 +1,8 @@
+.vscode
 a.out
-
+*.dSYM
 megaphone
 phonebook
-*.dSYM
 19920104_091532.log
 test
-
 zombie
