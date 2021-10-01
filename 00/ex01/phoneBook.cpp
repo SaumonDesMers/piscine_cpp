@@ -1,6 +1,7 @@
 #include "phoneBook.hpp"
 #include "contact.hpp"
 #include <iostream>
+#include <string>
 
 phoneBook::phoneBook() : nb_of_contact(0) {}
 
