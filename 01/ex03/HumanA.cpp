@@ -3,14 +3,12 @@
 #include "Weapon.hpp"
 #include "HumanA.hpp"
 
-HumanA::HumanA( std::string name, std::string newWeapon ) : name(name) {
-	weapon.setType(newWeapon);
-}
+HumanA::HumanA( std::string name, Weapon& newWeapon ) : name(name), weapon(newWeapon) {}
 
 HumanA::~HumanA() {}
 
-void	HumanA::setWeapon( std::string newWeapon ) {
-	weapon.setType(newWeapon);
+void	HumanA::setWeapon( Weapon& newWeapon ) {
+	weapon = newWeapon;
 }
 
 void	HumanA::attack( void ) {

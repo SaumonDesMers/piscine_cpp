@@ -17,10 +17,11 @@ NAME		= a.out
 
 SRC_DIR		= .
 SRCS		= $(patsubst %, $(SRC_DIR)/%, main.cpp Weapon.cpp HumanA.cpp HumanB.cpp)
+HEADER		= $(patsubst %, $(SRC_DIR)/%, Weapon.hpp HumanA.hpp HumanB.hpp)
 OBJ_DIR		= obj
 OBJS		= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-$(NAME):	$(OBJS)
+$(NAME):	$(OBJS) $(HEADER)
 			@$(CC) $(CFLAGS) $(OBJS) -o $@
 			@echo "$(Green)*** $(UGreen)Successfully compiling $(NAME)$(Green) ***$(nc)"
 

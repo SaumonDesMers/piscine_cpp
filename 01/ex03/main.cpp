@@ -3,19 +3,21 @@
 #include "HumanB.hpp"
 #include "HumanA.hpp"
 
-int	main( void )
+int main()
 {
-	HumanA	humanA("Jacques", "sword");
-	HumanB	humanB("Pierre");
-
-	std::cout << "Humans attack before grabbing a weapon :\n";
-	humanA.attack();
-	humanB.attack();
-
-	humanA.setWeapon("bow");
-	humanB.setWeapon("baseball bat");
-	std::cout << "\nHumans attack after grabbing a weapon :\n";
-	humanA.attack();
-	humanB.attack();
-	return 0;
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 }
