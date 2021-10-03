@@ -13,16 +13,17 @@ UGreen=\033[4;32m
 
 #----------------------------MANDATORY----------------------------
 
-NAME		= phonebook
+NAME		= karenFilter
 
 SRC_DIR		= .
-SRCS		= $(patsubst %, $(SRC_DIR)/%, main.cpp contact.cpp phoneBook.cpp)
-OBJ_DIR		= .
+SRCS		= $(patsubst %, $(SRC_DIR)/%, main.cpp karen.cpp)
+HEADER		= $(patsubst %, $(SRC_DIR)/%, karen.hpp)
+OBJ_DIR		= obj
 OBJS		= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-$(NAME):	$(OBJS)
-			@$(CC) $(CFLAGS) $(OBJS) -o $@ $(LIB)
-			@echo "$(Green)*** $(UGreen)Successfully compiled $(NAME)$(Green) ***$(nc)"
+$(NAME):	$(OBJS) $(HEADER)
+			@$(CC) $(CFLAGS) $(OBJS) -o $@
+			@echo "$(Green)*** $(UGreen)Successfully compiling $(NAME)$(Green) ***$(nc)"
 
 all:		$(NAME)
 

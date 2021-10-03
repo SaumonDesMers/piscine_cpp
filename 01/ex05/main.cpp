@@ -1,0 +1,14 @@
+#include <iostream>
+#include <string>
+#include "karen.hpp"
+
+int main()
+{
+	Karen	karen;
+
+	karen.complain("DEBUG");
+	karen.complain("INFO");
+	karen.complain("WARNING");
+	karen.complain("ERROR");
+	return 0;
+}
