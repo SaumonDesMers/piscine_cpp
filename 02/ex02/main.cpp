@@ -43,12 +43,17 @@ int main( int ac, char **av ) {
 	std::cout << min(a, b) << "\n\n";
 
 	std::cout << "COMPARAISON\n";
-	std::cout << "a == b :" << (a == b) << "\n";
-	std::cout << "a != b :" << (a != b) << "\n";
-	std::cout << "a >= b :" << (a >= b) << "\n";
-	std::cout << "a <= b :" << (a <= b) << "\n";
-	std::cout << "a > b  :" << (a > b) << "\n";
-	std::cout << "a < b  :" << (a < b) << "\n\n";
+	std::cout << "a == b : " << (a == b) << "\n";
+	std::cout << "a != b : " << (a != b) << "\n";
+	std::cout << "a >= b : " << (a >= b) << "\n";
+	std::cout << "a <= b : " << (a <= b) << "\n";
+	std::cout << "a > b  : " << (a > b) << "\n";
+	std::cout << "a < b  : " << (a < b) << "\n\n";
+
+	a = 1;
+	std::cout << "a = 1\n";
+	std::cout << "a > 1   = " << a << "       > 1 : " << (a > Fixed(1)) << "\n";
+	std::cout << "++a > 1 = " << ++a << " > 1 : " << (a > Fixed(1)) << "\n";
 
 	return 0;
 
