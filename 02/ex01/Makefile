@@ -1,5 +1,5 @@
 CC			= clang++
-CFLAGS		= -fsanitize=address -g -Wall -Wextra -Werror -std=c++98
+CFLAGS		= -fsanitize=address -g -std=c++98 #-Wall -Wextra -Werror
 RM			= rm -f
 LIB			=
 

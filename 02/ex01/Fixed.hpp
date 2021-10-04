@@ -15,7 +15,6 @@ public:
 	~Fixed();
 
 	Fixed&		operator=( const Fixed& src );
-	float		operator<<( const Fixed& src );
 
 	int			getRawBits( void ) const;
 	void		setRawBits( int const raw );
