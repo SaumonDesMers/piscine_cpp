@@ -27,14 +27,12 @@ bool	Fixed::operator>=( const Fixed& fixed ) {
 }
 
 Fixed	Fixed::operator+( const Fixed& fixed ) {
-	Fixed	var(_value + fixed.getRawBits());
-	var._value >>= 8;
+	Fixed	var(this->toFloat() + fixed.toFloat());
 	return var;
 }
 
 Fixed	Fixed::operator-( const Fixed& fixed ) {
-	Fixed	var(_value - fixed.getRawBits());
-	var._value >>= 8;
+	Fixed	var(this->toFloat() - fixed.toFloat());
 	return var;
 }
 

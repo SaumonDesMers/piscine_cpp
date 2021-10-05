@@ -52,7 +52,7 @@ int main( int ac, char **av ) {
 
 	a = 1;
 	std::cout << "a = 1\n";
-	std::cout << "a > 1   = " << a << "       > 1 : " << (a > Fixed(1)) << "\n";
+	std::cout << "a > 1   = " << a << " > 1 : " << (a > Fixed(1)) << "\n";
 	std::cout << "++a > 1 = " << ++a << " > 1 : " << (a > Fixed(1)) << "\n";
 
 	return 0;

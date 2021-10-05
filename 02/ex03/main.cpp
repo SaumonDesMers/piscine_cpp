@@ -10,8 +10,6 @@ int main( int ac, char **av ) {
 	Point d(Fixed(5), Fixed(5));
 
 	std::cout << bsp(a, b, c, d) << "\n";
-
-	std::cout << Fixed(0) - Fixed(30) << "\n";
 	return 0;
 
 }
