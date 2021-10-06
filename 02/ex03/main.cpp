@@ -4,10 +4,10 @@
 
 int main( int ac, char **av ) {
 
-	Point a(Fixed(0), Fixed(0));
-	Point b(Fixed(30), Fixed(0));
-	Point c(Fixed(0), Fixed(30));
-	Point d(Fixed(5), Fixed(5));
+	Point a(15, 15);
+	Point b(15, 30);
+	Point c(35, 20);
+	Point d(20, 20);
 
 	std::cout << bsp(a, b, c, d) << "\n";
 	return 0;
