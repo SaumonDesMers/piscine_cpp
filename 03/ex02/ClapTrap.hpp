@@ -5,7 +5,7 @@
 
 class ClapTrap {
 
-	private:
+	protected:
 
 		// Attributes
 		std::string		_name;
