@@ -10,6 +10,7 @@ Green=\033[0;32m
 BRed=\033[1;31m
 BYellow=\033[1;33m
 UGreen=\033[4;32m
+On_Green=\033[42m
 
 #----------------------------MANDATORY----------------------------
 
@@ -17,14 +18,24 @@ NAME		= phonebook
 
 SRC_DIR		= .
 SRCS		= $(patsubst %, $(SRC_DIR)/%, main.cpp contact.cpp phoneBook.cpp)
-OBJ_DIR		= .
-OBJS		= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+HEADER		= $(patsubst %, $(SRC_DIR)/%, contact.hpp phoneBook.hpp)
+OBJ_DIR		= obj
+OBJS		= $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-$(NAME):	$(OBJS)
-			@$(CC) $(CFLAGS) $(OBJS) -o $@ $(LIB)
-			@echo "$(Green)*** $(UGreen)Successfully compiled $(NAME)$(Green) ***$(nc)"
+$(OBJ_DIR)/%.o:$(SRC_DIR)/%.cpp
+			@mkdir -p $(OBJ_DIR)
+			@$(CC) $(CFLAGS) -I includes -c $< -o $@
+			@printf "$(On_Green) $(nc)"
+
+$(NAME):	$(OBJS) $(HEADER)
+			@$(CC) $(CFLAGS) $(OBJS) -o $@
+			@echo "\n$(Green)*** $(UGreen)Successfully compiling $(NAME)$(Green) ***$(nc)"
 
 all:		$(NAME)
+
+clean:
+			@$(RM) $(OBJS)
+			@echo "$(BRed)/!\\ $(BYellow)Remove $(NAME) obj$(BRed) /!\\ $(nc)"
 
 fclean:		clean
 			@$(RM) $(NAME)
@@ -32,5 +43,4 @@ fclean:		clean
 
 re:			fclean all
 
-
-.PHONY:		all clean re
+.PHONY:		all clean fclean re
