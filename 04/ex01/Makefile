@@ -17,8 +17,8 @@ On_Green=\033[42m
 NAME		= a.out
 
 SRC_DIR		= .
-SRCS		= $(patsubst %, $(SRC_DIR)/%, main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp)
-HEADER		= $(patsubst %, $(SRC_DIR)/%, Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp)
+SRCS		= $(patsubst %, $(SRC_DIR)/%, main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp)
+HEADER		= $(patsubst %, $(SRC_DIR)/%, Animal.hpp Cat.hpp Dog.hpp Brain.hpp)
 OBJ_DIR		= obj
 OBJS		= $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
