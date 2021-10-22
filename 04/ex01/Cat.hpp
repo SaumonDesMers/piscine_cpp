@@ -3,13 +3,14 @@
 
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal {
 
 	private:
 
 		// Attributes
-		std::string	*brain;
+		Brain	*brain;
 
 		// Internal functions
 
@@ -25,6 +26,7 @@ class Cat : public Animal {
 
 		// Member functions
 		void	makeSound() const;
+		virtual void	showIdeas(int index = -1) const;
 
 };
 

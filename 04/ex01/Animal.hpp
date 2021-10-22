@@ -18,7 +18,7 @@ class Animal {
 		Animal(void);
 		Animal(const Animal &src);
 		Animal(const std::string name);
-		~Animal();
+		virtual ~Animal();
 
 		// Operator overloads
 		Animal&	operator=(const Animal &src);
@@ -26,7 +26,7 @@ class Animal {
 		// Member functions
 		std::string	getType() const;
 		virtual void	makeSound(void) const;
-		virtual void	showIdeas(void) const;
+		virtual void	showIdeas(int index = -1) const;
 
 };
 

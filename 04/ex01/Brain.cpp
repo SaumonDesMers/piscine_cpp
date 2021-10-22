@@ -18,6 +18,8 @@ Brain::~Brain() {}
 Brain&	Brain::operator=(const Brain &src) {}
 
 std::string	Brain::getIdea(int i) const {
+	if (i < 0 || i > 99)
+		return "Wrong idea number";
 	return ideas[i];
 }
 

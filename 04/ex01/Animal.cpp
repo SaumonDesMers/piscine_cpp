@@ -28,3 +28,7 @@ std::string	Animal::getType() const {
 void	Animal::makeSound() const {
 	std::cout << "* weird undefined sound *\n";
 }
+
+void	Animal::showIdeas(int index) const {
+	std::cout << "There is no ideas here" << std::endl;
+}

@@ -26,7 +26,7 @@ class Dog : public Animal {
 
 		// Member functions
 		void	makeSound() const;
-		void	showIdeas() const;
+		void	showIdeas(int index = -1) const;
 
 };
 
