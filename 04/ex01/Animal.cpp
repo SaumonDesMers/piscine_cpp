@@ -1,4 +1,5 @@
 #include "Animal.hpp"
+#include "Brain.hpp"
 #include <iostream>
 
 Animal::Animal(void) : type("Undefined animal") {
@@ -32,3 +33,9 @@ void	Animal::makeSound() const {
 void	Animal::showIdeas(int index) const {
 	std::cout << "There is no ideas here" << std::endl;
 }
+
+std::string	Animal::getIdea(int index) const {
+	return "There is no ideas here";
+}
+
+void	Animal::setIdea(int index, std::string idea) {}

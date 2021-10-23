@@ -10,6 +10,9 @@ Dog::Dog(void) : Animal("Dog") {
 
 Dog::Dog(const Dog &src) : Animal(src.type) {
 	std::cout << "An Dog has been copied\n";
+	type = src.type;
+	for (int i=0; i < 100; i++)
+		setIdea(i, src.getIdea(i));
 }
 
 Dog::~Dog() {
@@ -20,6 +23,8 @@ Dog::~Dog() {
 Dog&	Dog::operator=(const Dog &src) {
 	std::cout << "An Dog has been assignated\n";
 	type = src.type;
+	for (int i=0; i < 100; i++)
+		this->setIdea(i, src.getIdea(i));
 	return *this;
 }
 
@@ -33,4 +38,12 @@ void	Dog::showIdeas(int index) const {
 			std::cout << brain->getIdea(i) << std::endl;
 	else
 		std::cout << brain->getIdea(index) << std::endl;
+}
+
+std::string	Dog::getIdea(int index) const {
+	return brain->getIdea(index);
+}
+
+void	Dog::setIdea(int index, std::string idea) {
+	brain->setIdea(index, idea);
 }

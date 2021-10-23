@@ -25,8 +25,10 @@ class Dog : public Animal {
 		Dog&	operator=(const Dog &src);
 
 		// Member functions
-		void	makeSound() const;
-		void	showIdeas(int index = -1) const;
+		void		makeSound() const;
+		std::string	getIdea(int index) const;
+		void		setIdea(int index, std::string idea);
+		void		showIdeas(int index = -1) const;
 
 };
 
