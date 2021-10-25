@@ -26,10 +26,10 @@ class Animal {
 
 		// Member functions
 		std::string		getType() const;
-		virtual std::string	getIdea(int index) const;
-		virtual void	setIdea(int index, std::string idea);
-		virtual void	makeSound(void) const;
-		virtual void	showIdeas(int index = -1) const;
+		virtual std::string	getIdea(int index) const = 0;
+		virtual void	setIdea(int index, std::string idea) = 0;
+		virtual void	makeSound(void) const = 0;
+		virtual void	showIdeas(int index = -1) const = 0;
 
 };
 
