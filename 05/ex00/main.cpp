@@ -3,12 +3,22 @@
 
 int main(int argc, char const *argv[])
 {
-	try {
-		Bureaucrat b("name", 1);
-		b.incrementGrade();
+	try
+	{
+		Bureaucrat b("name", 150);
+		b.decrementGrade();
 	}
-	catch (std::exception &e) {
-		std:: cout << e.what() << std::endl;
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		Bureaucrat b("name", 0);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
 	}
 	return 0;
 }
