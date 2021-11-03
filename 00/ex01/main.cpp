@@ -15,9 +15,8 @@ int main()
 	phoneBook phoneBook;
 	std::string input ("");
 
-	while (input != "EXIT")
+	while (std::getline(std::cin, input) && input != "EXIT")
 	{
-		std::getline(std::cin, input);
 		if (input == "ADD")
 			phoneBook.addContact();
 		else if (input == "SEARCH")
