@@ -1,7 +1,7 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-int main(int argc, char const *argv[])
+int main()
 {
 	ClapTrap	ct1("Lancelot");
 

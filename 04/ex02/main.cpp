@@ -4,7 +4,7 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-int main(int argc, char const *argv[])
+int main()
 {
 	// Animal	animal;
 	Dog		dog;

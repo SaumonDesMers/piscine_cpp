@@ -4,7 +4,7 @@
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
-int main(int argc, char const *argv[])
+int main()
 {
 	ClapTrap	clapTrap("Lancelot");
 	clapTrap.attack("someone");

@@ -3,7 +3,7 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-int main(int argc, char const *argv[])
+int main()
 {
 	ClapTrap	clapTrap("Lancelot");
 	clapTrap.attack("someone");

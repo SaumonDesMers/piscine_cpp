@@ -6,7 +6,7 @@
 #include "WrongCat.hpp"
 #include "Dog.hpp"
 
-int main(int argc, char const *argv[])
+int main()
 {
 	const Animal* animal = new Animal();
 	const Animal* dog = new Dog();

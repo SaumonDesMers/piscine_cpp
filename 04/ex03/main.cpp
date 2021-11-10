@@ -5,7 +5,7 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 
-int main(int argc, char const *argv[])
+int main()
 {
 	IMateriaSource* src = new MateriaSource();
 

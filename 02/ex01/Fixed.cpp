@@ -4,18 +4,6 @@
 
 int Fixed::_fractionalBits = 8;
 
-template <class T>
-std::string	getBinary( T x ) {
-
-	std::string	str("");
-	for (int i = sizeof(T) - 1 ; i >= 0 ; i--)
-	{
-		std::bitset<8>bitset(reinterpret_cast<char*>(&x)[i]);
-		str += bitset.to_string();
-	}
-	return str;
-}
-
 Fixed::Fixed( void ) : _value(0) { 
 	std::cout << "Default constructor called\n";
 }

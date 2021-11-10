@@ -33,11 +33,16 @@ void	Animal::makeSound() const {
 }
 
 void	Animal::showIdeas(int index) const {
+	(void)index;
 	std::cout << "There is no ideas here" << std::endl;
 }
 
 std::string	Animal::getIdea(int index) const {
+	(void)index;
 	return "There is no ideas here";
 }
 
-void	Animal::setIdea(int index, std::string idea) {}
+void	Animal::setIdea(int index, std::string idea) {
+	(void)index;
+	(void)idea;
+}

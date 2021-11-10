@@ -2,7 +2,7 @@
 #include "Fixed.hpp"
 #include "Point.hpp"
 
-int main( int ac, char **av ) {
+int main() {
 
 	Point a(15, 15);
 	Point b(15, 30);

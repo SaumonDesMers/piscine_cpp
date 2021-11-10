@@ -1,24 +1,10 @@
 #include <iostream>
 #include "Fixed.hpp"
 
-template <class T>
-std::string	getBinary( T x ) {
+int main() {
 
-	std::string	str("");
-	for (int i = sizeof(T) - 1 ; i >= 0 ; i--)
-	{
-		std::bitset<8>bitset(reinterpret_cast<char*>(&x)[i]);
-		str += bitset.to_string(); ;
-	}
-	return str;
-}
-
-int main( int ac, char **av ) {
-
-	if (ac < 3)
-		return 0;
-	float	f1=atof(av[1]), f2=atof(av[2]);
-	Fixed a(f1), b(f2);
+	float	f1(0.0f), f2(0.0f);
+	Fixed	a(f1), b(f2);
 
 	std::cout << "ADDITION\n";
 	std::cout << "Fixed : " << a + b << "\n";
