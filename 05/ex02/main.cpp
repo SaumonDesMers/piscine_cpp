@@ -7,12 +7,13 @@ int main()
 {
 	try
 	{
-		Bureaucrat bur;
-		Form *form = new ShrubberyCreationForm();
+		Bureaucrat bur("esclave", 135);
+		Form *form = new ShrubberyCreationForm("target_file");
+		bur.signeForm(*form);
 		bur.executeForm(*form);
 		delete form;
 	}
-	catch(const std::exception& e)
+	catch (const std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

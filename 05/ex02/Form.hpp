@@ -29,13 +29,13 @@ class Form {
 		Form&	operator=(const Form &src);
 
 		// Member functions
-		std::string getName() const;
-		bool		isSigned() const;
-		int			getSigneGrade() const;
-		int			getExecuteGrade() const;
-		void		beSigned(Bureaucrat &bur);
-		virtual void	execute(Bureaucrat const & executor) const = 0;
-		bool		canExecute(Bureaucrat const & executor) const;
+		std::string 	getName() const;
+		bool			isSigned() const;
+		int				getSigneGrade() const;
+		int				getExecuteGrade() const;
+		void			beSigned(Bureaucrat &bur);
+		void			execute(Bureaucrat const & executor) const;
+		virtual void	doSomething() const = 0;
 
 		// Exception
 		class GradeTooHighException : public std::exception {

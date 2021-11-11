@@ -1,4 +1,5 @@
 #include <sstream>
+#include <iostream>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
@@ -56,10 +57,10 @@ void	Form::beSigned(Bureaucrat &bur) {
 	_signed = true;
 }
 
-bool	Form::canExecute(Bureaucrat const & executor) const {
-	if (!_signed)
-		throw NotSignedException;
-	if (executor.getGrade() > executeGrade)
+void	Form::execute(Bureaucrat const & executor) const {
+	if (executor.getGrade() > this->getExecuteGrade())
 		throw GradeTooLowException;
-	return true;
+	if (!this->isSigned())
+		throw NotSignedException;
+	doSomething();
 }

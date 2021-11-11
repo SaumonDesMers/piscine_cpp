@@ -1,29 +1,55 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) :
-	target(target), _signed(false), signeGrade(145), executeGrade(137) {}
+	Form("ShrubberyCreationForm", 145, 137), target(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) :
-	target(src.target), _signed(src._signed), signeGrade(src.signeGrade), executeGrade(src.executeGrade) {}
+	Form(src), target(src.target) {}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationForm &src) {
 	target = src.target;
-	_signed = src._signed;
-	signeGrade = src.signeGrade;
-	executeGrade = src.executeGrade;
+	Form::operator=(src);
+	return *this;
 }
 
-void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
-	try
-	{
-		canExecute(executor);
-		std::cout << executor.getName() << "grow a tree" << std::endl;
+void	ShrubberyCreationForm::doSomething() const {
+	std::ofstream	outfile((target + "_shrubbery").c_str());
+	if (!outfile.is_open()) {
+		std::cout << "Fail to open output file" << std::endl;
+		return ;
 	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	outfile << "	                                              .\n";
+	outfile << "                                   .         ;\n";
+	outfile << "      .              .              ;%     ;;\n";
+	outfile << "        ,           ,                :;%  %;\n";
+	outfile << "         :         ;                   :;%;'     .,\n";
+	outfile << ",.        %;     %;            ;        %;'    ,;\n";
+	outfile << "  ;       ;%;  %%;        ,     %;    ;%;    ,%'\n";
+	outfile << "   %;       %;%;      ,  ;       %;  ;%;   ,%;'\n";
+	outfile << "    ;%;      %;        ;%;        % ;%;  ,%;'\n";
+	outfile << "     `%;.     ;%;     %;'         `;%%;.%;'\n";
+	outfile << "      `:;%.    ;%%. %@;        %; ;@%;%'\n";
+	outfile << "         `:%;.  :;bd%;          %;@%;'\n";
+	outfile << "           `@%:.  :;%.         ;@@%;'\n";
+	outfile << "             `@%.  `;@%.      ;@@%;\n";
+	outfile << "               `@%%. `@%%    ;@@%;\n";
+	outfile << "                 ;@%. :@%%  %@@%;\n";
+	outfile << "                   %@bd%%%bd%%:;\n";
+	outfile << "                     #@%%%%%:;;\n";
+	outfile << "                     %@@%%%::;\n";
+	outfile << "                     %@@@%(o);  . '\n";
+	outfile << "                     %@@@o%;:(.,'\n";
+	outfile << "                 `.. %@@@o%::;\n";
+	outfile << "                    `)@@@o%::;\n";
+	outfile << "                     %@@(o)::;\n";
+	outfile << "                    .%@@@@%::;\n";
+	outfile << "                    ;%@@@@%::;.\n";
+	outfile << "                   ;%@@@@%%:;;;.\n";
+	outfile << "               ...;%@@@@@%%:;;;;,..\n";
+	outfile.close();
 }

@@ -17,8 +17,8 @@ On_Green=\033[42m
 NAME		= a.out
 
 SRC_DIR		= .
-SRCS		= $(patsubst %, $(SRC_DIR)/%, main.cpp Bureaucrat.cpp Form.cpp)
-HEADER		= $(patsubst %, $(SRC_DIR)/%, Bureaucrat.hpp Form.hpp)
+SRCS		= $(patsubst %, $(SRC_DIR)/%, main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp)
+HEADER		= $(patsubst %, $(SRC_DIR)/%, Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp)
 OBJ_DIR		= obj
 OBJS		= $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 

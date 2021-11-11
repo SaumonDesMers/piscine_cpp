@@ -10,10 +10,6 @@ class ShrubberyCreationForm : public Form {
 
 		// Attributes
 		std::string	target;
-		// std::string	name;
-		bool		_signed;
-		int		 	signeGrade;
-		int		 	executeGrade;
 
 		// Internal functions
 
@@ -28,7 +24,7 @@ class ShrubberyCreationForm : public Form {
 		ShrubberyCreationForm&	operator=(const ShrubberyCreationForm &src);
 
 		// Member functions
-		void	execute(Bureaucrat const & executor) const;
+		void	doSomething() const;
 
 };
 
