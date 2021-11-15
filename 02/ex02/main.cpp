@@ -3,7 +3,7 @@
 
 int main() {
 
-	float	f1(0.0f), f2(0.0f);
+	float	f1(1.5f), f2(2.0f);
 	Fixed	a(f1), b(f2);
 
 	std::cout << "ADDITION\n";
