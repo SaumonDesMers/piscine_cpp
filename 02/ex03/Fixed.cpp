@@ -2,8 +2,6 @@
 #include <cmath>
 #include "Fixed.hpp"
 
-int Fixed::_fractionalBits = 8;
-
 Fixed::Fixed( void ) : _value(0) {}
 
 Fixed::~Fixed() {}

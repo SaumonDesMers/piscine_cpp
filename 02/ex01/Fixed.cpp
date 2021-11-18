@@ -2,8 +2,6 @@
 #include <cmath>
 #include "Fixed.hpp"
 
-int Fixed::_fractionalBits = 8;
-
 Fixed::Fixed( void ) : _value(0) { 
 	std::cout << "Default constructor called\n";
 }
@@ -17,11 +15,11 @@ Fixed::Fixed( const Fixed& src ) : _value(src.getRawBits()) {
 }
 
 Fixed::Fixed(const int nb) : _value(nb << _fractionalBits) {
-	std::cout << "Float constructor called\n";
+	std::cout << "Int constructor called\n";
 }
 
 Fixed::Fixed(const float nb) : _value(roundf(nb * (1 << _fractionalBits))) {
-	std::cout << "Int constructor called\n";
+	std::cout << "Float constructor called\n";
 }
 
 Fixed&	Fixed::operator=( const Fixed& fixed ) {

@@ -4,8 +4,8 @@
 class Fixed {
 
 private:
-	int			_value;
-	static int	_fractionalBits;
+	int					_value;
+	static const int	_fractionalBits = 8;
 
 public:
 	Fixed( void );
@@ -22,5 +22,7 @@ public:
 	int			toInt( void ) const;
 	float		toFloat( void ) const;
 };
+
+std::ostream&	operator<<( std::ostream& os, const Fixed& fixed );
 
 #endif
