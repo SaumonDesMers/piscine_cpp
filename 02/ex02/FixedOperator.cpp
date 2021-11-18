@@ -58,7 +58,7 @@ Fixed	Fixed::operator++( int ) {
 }
 
 Fixed	Fixed::operator--( void ) {
-	++_value;
+	--_value;
 	return *this;
 }
 
@@ -68,18 +68,18 @@ Fixed	Fixed::operator--( int ) {
 	return retval;
 }
 
-Fixed&		Fixed::min( const Fixed& fixed1, const Fixed& fixed2 ) {
+Fixed const&	Fixed::min( const Fixed& fixed1, const Fixed& fixed2 ) {
 	return ((Fixed&)(fixed1.getRawBits() <= fixed2.getRawBits() ? fixed1 : fixed2));
 }
 
-Fixed&		Fixed::max( const Fixed& fixed1, const Fixed& fixed2 ) {
+Fixed const&	Fixed::max( const Fixed& fixed1, const Fixed& fixed2 ) {
 	return ((Fixed&)(fixed1.getRawBits() >= fixed2.getRawBits() ? fixed1 : fixed2));
 }
 
-Fixed&		min( const Fixed& fixed1, const Fixed& fixed2 ) {
+Fixed&			Fixed::min( Fixed& fixed1, Fixed& fixed2 ) {
 	return ((Fixed&)(fixed1.getRawBits() <= fixed2.getRawBits() ? fixed1 : fixed2));
 }
 
-Fixed&		max( const Fixed& fixed1, const Fixed& fixed2 ) {
+Fixed&			Fixed::max( Fixed& fixed1, Fixed& fixed2 ) {
 	return ((Fixed&)(fixed1.getRawBits() >= fixed2.getRawBits() ? fixed1 : fixed2));
 }

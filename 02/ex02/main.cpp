@@ -23,10 +23,10 @@ int main() {
 	std::cout << "Float : " << f1 / f2 << "\n\n";
 
 	std::cout << "MAX\n";
-	std::cout << max(a, b) << "\n\n";
+	std::cout << Fixed::max(a, b) << "\n\n";
 
 	std::cout << "MIN\n";
-	std::cout << min(a, b) << "\n\n";
+	std::cout << Fixed::min(a, b) << "\n\n";
 
 	std::cout << "COMPARAISON\n";
 	std::cout << "a == b : " << (a == b) << "\n";
