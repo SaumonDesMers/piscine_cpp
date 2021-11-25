@@ -6,6 +6,11 @@
 
 class ScavTrap : virtual public ClapTrap {
 
+	protected:
+		int		_Scav_hitPts;
+		int		_Scav_energyPts;
+		int		_Scav_attackDmg;
+
 	private:
 
 		// Attributes

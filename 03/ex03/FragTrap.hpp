@@ -3,8 +3,14 @@
 
 #include <string>
 #include "ClapTrap.hpp"
+#define FRAG_ATK 100
 
 class FragTrap : virtual public ClapTrap {
+
+	protected:
+		int		_Frag_hitPts;
+		int		_Frag_energyPts;
+		int		_Frag_attackDmg;
 
 	private:
 
@@ -24,6 +30,7 @@ class FragTrap : virtual public ClapTrap {
 		FragTrap&	operator=(const FragTrap &src);
 
 		// Member functions
+		void	attack(const std::string &target);
 		void	highFivesGuys();
 };
 

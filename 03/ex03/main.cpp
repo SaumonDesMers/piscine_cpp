@@ -36,6 +36,7 @@ int main()
 	diamondTrap.guardGate();
 	diamondTrap.highFivesGuys();
 	diamondTrap.whoAmI();
+	diamondTrap.info();
 
 	std::cout << "\n";
 	return 0;

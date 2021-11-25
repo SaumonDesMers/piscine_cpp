@@ -5,16 +5,21 @@
 FragTrap::FragTrap(void) : ClapTrap() {
 	std::cout << "FragTrap without name has been formed\n";
 	_hitPts = 100; _energyPts = 100; _attackDmg = 30;
+	_Frag_hitPts = 100; _Frag_energyPts = 100; _Frag_attackDmg = 30;
 }
 
 FragTrap::FragTrap(const std::string name) : ClapTrap(name) {
 	std::cout << "FragTrap " << name << " has been formed\n";
 	_hitPts = 100; _energyPts = 100; _attackDmg = 30;
+	_Frag_hitPts = 100; _Frag_energyPts = 100; _Frag_attackDmg = 30;
 }
 
 FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src._name) {
 	std::cout << "FragTrap " << src._name << " has been copied\n";
 	_hitPts = src._hitPts; _energyPts = src._energyPts; _attackDmg = src._attackDmg;
+	_Frag_hitPts = src._Frag_hitPts;
+	_Frag_energyPts = src._Frag_energyPts;
+	_Frag_attackDmg = src._Frag_attackDmg;
 }
 
 FragTrap::~FragTrap() {
@@ -26,7 +31,14 @@ FragTrap&	FragTrap::operator=(const FragTrap &src) {
 	_hitPts = src._hitPts;
 	_energyPts = src._energyPts;
 	_attackDmg = src._attackDmg;
+	_Frag_hitPts = src._Frag_hitPts;
+	_Frag_energyPts = src._Frag_energyPts;
+	_Frag_attackDmg = src._Frag_attackDmg;
 	return *this;
+}
+
+void	FragTrap::attack(const std::string &target) {
+	std::cout << "FragTrap " << _name << " attack " << target << ", dealing " << _attackDmg << " points of damage.\n";
 }
 
 void	FragTrap::highFivesGuys() {
