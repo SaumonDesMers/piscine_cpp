@@ -8,7 +8,9 @@ Cure::Cure(void) : AMateria("cure") {}
 
 Cure::Cure(std::string const &type) : AMateria(type) {}
 
-Cure::Cure(const Cure &src) : AMateria("cure") {}
+Cure::Cure(const Cure &src) : AMateria("cure") {
+	(void)src;
+}
 
 Cure::~Cure() {}
 

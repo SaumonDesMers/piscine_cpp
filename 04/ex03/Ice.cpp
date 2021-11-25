@@ -8,7 +8,9 @@ Ice::Ice(void) : AMateria("ice") {}
 
 Ice::Ice(std::string const &type) : AMateria(type) {}
 
-Ice::Ice(const Ice &src) : AMateria("ice") {}
+Ice::Ice(const Ice &src) : AMateria("ice") {
+	(void)src;
+}
 
 Ice::~Ice() {}
 

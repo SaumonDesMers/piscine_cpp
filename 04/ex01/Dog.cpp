@@ -4,31 +4,31 @@
 #include <iostream>
 
 Dog::Dog(void) : Animal("Dog") {
-	std::cout << "An Dog has been created\n";
+	std::cout << "A dog has been created\n";
 	brain = new Brain();
 }
 
 Dog::Dog(const Dog &src) : Animal(src.type) {
-	std::cout << "An Dog has been copied\n";
+	std::cout << "A dog has been copied\n";
 	type = src.type;
 	for (int i=0; i < 100; i++)
 		setIdea(i, src.getIdea(i));
 }
 
 Dog::~Dog() {
-	std::cout << "An dog is dead\n";
+	std::cout << "A dog is dead\n";
 	delete brain;
 }
 
 Animal&	Dog::operator=(const Animal &src) {
-	std::cout << "An Dog has been assignated\n";
+	std::cout << "A dog has been assignated\n";
 	for (int i=0; i < 100; i++)
 		this->setIdea(i, src.getIdea(i));
 	return *this;
 }
 
 Dog&	Dog::operator=(const Dog &src) {
-	std::cout << "An Dog has been assignated\n";
+	std::cout << "A dog has been assignated\n";
 	type = src.type;
 	for (int i=0; i < 100; i++)
 		this->setIdea(i, src.getIdea(i));

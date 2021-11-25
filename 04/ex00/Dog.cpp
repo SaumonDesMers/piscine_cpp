@@ -3,19 +3,19 @@
 #include <iostream>
 
 Dog::Dog(void) : Animal("Dog") {
-	std::cout << "An Dog has been created\n";
+	std::cout << "A Dog has been created\n";
 }
 
 Dog::Dog(const Dog &src) : Animal(src.type) {
-	std::cout << "An Dog has been copied\n";
+	std::cout << "A Dog has been copied\n";
 }
 
 Dog::~Dog() {
-	std::cout << "An dog is dead\n";
+	std::cout << "A dog is dead\n";
 }
 
 Dog&	Dog::operator=(const Dog &src) {
-	std::cout << "An Dog has been assignated\n";
+	std::cout << "A Dog has been assignated\n";
 	type = src.type;
 	return *this;
 }
