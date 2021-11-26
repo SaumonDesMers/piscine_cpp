@@ -16,9 +16,9 @@ NAME		= a.out
 
 SRC_DIR		= .
 SRCS		= $(patsubst %, $(SRC_DIR)/%, main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp \
-				RobotomyRequestForm.cpp PresidentialPardonForm.cpp)
+				RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp)
 HEADER		= $(patsubst %, $(SRC_DIR)/%, Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp \
-				RobotomyRequestForm.hpp PresidentialPardonForm.hpp)
+				RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp)
 OBJ_DIR		= obj
 OBJS		= $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 

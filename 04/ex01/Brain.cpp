@@ -3,6 +3,7 @@
 #include <sstream>
 
 Brain::Brain(void) {
+	std::cout << "An brain has been created" << std::endl;
 	for (int i=0; i < 100; i++)
 	{
 		std::stringstream ss;
@@ -16,7 +17,9 @@ Brain::Brain(const Brain &src) {
 		this->setIdea(i, src.getIdea(i));
 }
 
-Brain::~Brain() {}
+Brain::~Brain() {
+	std::cout << "An brain has been deleted" << std::endl;
+}
 
 Brain&	Brain::operator=(const Brain &src) {
 	for (int i=0; i < 100; i++)
@@ -33,5 +36,6 @@ std::string	Brain::getIdea(int i) const {
 void	Brain::setIdea(int i, std::string str) {
 	if (i < 0 || i > 99)
 		std::cout << "Wrong idea number\n";
-	ideas[i] = str;
+	else
+		ideas[i] = str;
 }

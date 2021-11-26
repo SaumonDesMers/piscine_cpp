@@ -5,7 +5,9 @@ Animal::Animal(void) : type("Undefined animal") {
 	std::cout << "An undefined animal has been created\n";
 }
 
-Animal::Animal(const std::string typeName) : type(typeName) {}
+Animal::Animal(const std::string typeName) : type(typeName) {
+	std::cout << "An undefined animal has been created\n";
+}
 
 Animal::Animal(const Animal &src) : type(src.type) {
 	std::cout << "An undefined animal has been copied\n";

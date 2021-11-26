@@ -14,13 +14,8 @@ Character::Character(std::string const &name) : name(name) {
 
 Character::Character(const Character &src) {
 	name = src.name;
-	for (int i=0; i<4 && materia[i]; i++)
-	{
-		delete materia[i];
-		materia[i] = NULL;
-	}
 	for (int i=0; i<4; i++)
-		materia[i] = src.materia[i];
+		materia[i] = src.materia[i]->clone();
 }
 
 Character::~Character() {
@@ -39,7 +34,7 @@ Character&	Character::operator=(const Character &src) {
 		materia[i] = NULL;
 	}
 	for (int i=0; i<4; i++)
-		materia[i] = src.materia[i];
+		materia[i] = src.materia[i]->clone();
 	return *this;
 }
 
