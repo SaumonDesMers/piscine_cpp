@@ -5,6 +5,12 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
+createForm Intern::form[3] = {
+	&Intern::createShrubberyCreationForm,
+	&Intern::createRobotomyRequestForm,
+	&Intern::createPresidentialPardonForm
+};
+
 Intern::Intern(void) {}
 
 Intern::Intern(const Intern &src) {
@@ -20,27 +26,11 @@ Intern&	Intern::operator=(const Intern &src) {
 
 Form*	Intern::makeForm(std::string const &name, std::string const &target) {
 	std::string	formName[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-	// form_t	form[] = {&Intern::createShrubberyCreationForm, &Intern::createRobotomyRequestForm, &Intern::createPresidentialPardonForm};
 
-	// form_t cur;
-
-	// for (int i = 0; i < 3; i++)
-	// {
-	// 	cur = (form_t)form[i];
-	// 	if (name==formName[i])
-	// 		cur(target);
-	// }
-
-	// // for (int i=0; i<3; i++)
-	// //  	if (name == formName[i])
-	// //  		return (form[i](target));
-	// std::cout << "This form doesn't exist" << std::endl;
-
-	FormType  formList[] = {
-        { "shrubbery creation", &Intern::createShrubberyCreationForm },
-        { "robotomy request", &Intern::createRobotomyRequestForm },
-        { "presidential pardon", &Intern::createPresidentialPardonForm }
-    };
+	for (int i=0; i<3; i++)
+	 	if (name == formName[i])
+	 		return ((this->*form[i])(target));
+	std::cout << "This form doesn't exist" << std::endl;
 
 	return (NULL);
 }

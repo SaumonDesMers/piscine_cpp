@@ -6,13 +6,8 @@ MateriaSource::MateriaSource(void) {
 }
 
 MateriaSource::MateriaSource(const MateriaSource &src) {
-	for (int i=0; i<4 && materia[i]; i++)
-	{
-		delete materia[i];
-		materia[i] = NULL;
-	}
-	for (int i=0; i<4; i++)
-		materia[i] = src.materia[i];
+	for (int i=0; i<4 && src.materia[i]; i++)
+		materia[i] = src.materia[i]->clone();
 }
 
 MateriaSource::~MateriaSource() {
@@ -29,8 +24,8 @@ MateriaSource&	MateriaSource::operator=(const MateriaSource &src) {
 		delete materia[i];
 		materia[i] = NULL;
 	}
-	for (int i=0; i<4; i++)
-		materia[i] = src.materia[i];
+	for (int i=0; i<4 && src.materia[i]; i++)
+		materia[i] = src.materia[i]->clone();
 	return *this;
 }
 

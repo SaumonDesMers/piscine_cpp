@@ -14,7 +14,7 @@ Character::Character(std::string const &name) : name(name) {
 
 Character::Character(const Character &src) {
 	name = src.name;
-	for (int i=0; i<4; i++)
+	for (int i=0; i<4 && src.materia[i]; i++)
 		materia[i] = src.materia[i]->clone();
 }
 
@@ -33,7 +33,7 @@ Character&	Character::operator=(const Character &src) {
 		delete materia[i];
 		materia[i] = NULL;
 	}
-	for (int i=0; i<4; i++)
+	for (int i=0; i<4 && src.materia[i]; i++)
 		materia[i] = src.materia[i]->clone();
 	return *this;
 }
@@ -52,7 +52,10 @@ void Character::equip(AMateria* m) {
 
 void Character::unequip(int idx) {
 	if (idx>=0 && idx<4)
+	{
+		delete materia[idx];
 		materia[idx] = NULL;
+	}
 }
 
 void Character::use(int idx, ICharacter& target) {

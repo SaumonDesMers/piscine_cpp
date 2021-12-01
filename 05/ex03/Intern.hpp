@@ -4,17 +4,22 @@
 #include "Form.hpp"
 #include <string.h>
 
+class Intern;
+
+typedef Form* (Intern::*createForm)(const std::string&);
+
 class Intern {
 
 	private:
 
-		// Attributes
-
+		// Internal functions
 		Form	*createShrubberyCreationForm(std::string const &target);
 		Form	*createRobotomyRequestForm(std::string const &target);
 		Form	*createPresidentialPardonForm(std::string const &target);
-		// Internal functions
 		
+		// Attributes
+		static createForm form[3];
+
 	public:
 
 		// Constructors and destructor
@@ -28,15 +33,6 @@ class Intern {
 		// Member functions
 		Form*	makeForm(std::string const &name, std::string const &target);
 
-};
-
-typedef Form* (Intern::*createForm)(const std::string&);
-
-struct FormType {
-
-    public:
-        const std::string   formName;
-        createForm          formCreator;
 };
 
 #endif // INTERN_HPP
