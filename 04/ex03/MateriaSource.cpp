@@ -6,6 +6,8 @@ MateriaSource::MateriaSource(void) {
 }
 
 MateriaSource::MateriaSource(const MateriaSource &src) {
+	for (int i=0; i<4; i++)
+		materia[i] = NULL;
 	for (int i=0; i<4 && src.materia[i]; i++)
 		materia[i] = src.materia[i]->clone();
 }

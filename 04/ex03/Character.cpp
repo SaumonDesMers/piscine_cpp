@@ -14,6 +14,8 @@ Character::Character(std::string const &name) : name(name) {
 
 Character::Character(const Character &src) {
 	name = src.name;
+	for (int i=0; i<4; i++)
+		materia[i] = NULL;
 	for (int i=0; i<4 && src.materia[i]; i++)
 		materia[i] = src.materia[i]->clone();
 }
