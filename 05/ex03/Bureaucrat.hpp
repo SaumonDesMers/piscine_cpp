@@ -46,6 +46,11 @@ class Bureaucrat {
 				return "GradeTooLowException";
 			}
 		} GradeTooLowException;
+		class NullFormExecption : public std::exception {
+			virtual const char *what() const throw() {
+				return "NullFormExecption";
+			}
+		} NullFormExecption;
 };
 
 #endif // BUREAUCRAT_HPP

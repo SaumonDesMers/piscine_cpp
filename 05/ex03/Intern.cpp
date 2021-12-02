@@ -28,10 +28,12 @@ Form*	Intern::makeForm(std::string const &name, std::string const &target) {
 	std::string	formName[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 
 	for (int i=0; i<3; i++)
-	 	if (name == formName[i])
-	 		return ((this->*form[i])(target));
+		if (name == formName[i])
+		{
+			std::cout << "Intern create " << name << std::endl;
+			return ((this->*form[i])(target));
+		}
 	std::cout << "This form doesn't exist" << std::endl;
-
 	return (NULL);
 }
 
