@@ -9,11 +9,25 @@ class Convert {
 
 		// Attributes
 		char			charValue;
+		std::string		charString;
 		int				intValue;
+		std::string		intString;
 		float			floatValue;
+		std::string		floatString;
 		double			doubleValue;
+		std::string		doubleString;
+
+		long double		buffer;
+
+		enum e_type {
+			CHAR,
+			INT,
+			FLOAT,
+			DOUBLE
+		};
 
 		// Internal functions
+		e_type		detectType(std::string const & str);
 
 	public:
 
@@ -26,6 +40,7 @@ class Convert {
 		Convert&	operator=(const Convert &src);
 
 		// Member functions
+		void		print();
 
 };
 
