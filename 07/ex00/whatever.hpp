@@ -30,13 +30,13 @@ void	test(T a, T b, std::string type)
 	std::cout << "---------- " << type << " ----------" << std::endl;
 	std::cout << "first value:  " << a << std::endl;
 	std::cout << "second value: " << b << std::endl;
-	swap(&a, &b);
+	::swap(&a, &b);
 	std::cout << "swap values" << std::endl;
 	std::cout << "first value:  " << a << std::endl;
 	std::cout << "second value: " << b << std::endl;
 	std::cout << std::endl;
-	std::cout << "min value: " << min(a, b) << std::endl;
-	std::cout << "max value: " << max(a, b) << std::endl;
+	std::cout << "min value: " << ::min(a, b) << std::endl;
+	std::cout << "max value: " << ::max(a, b) << std::endl;
 	std::cout << std::endl;
 }
 
