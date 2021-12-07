@@ -1,6 +1,8 @@
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
+#include <exception>
+
 template <class T>
 class Array {
 
@@ -24,7 +26,7 @@ class Array {
 		Array(const Array &src) {
 			_size = src.size();
 			tab = new T[_size];
-			for (int i=0; i < _size; i++)
+			for (unsigned int i=0; i < _size; i++)
 				tab[i] = src[i];
 		}
 
@@ -37,13 +39,13 @@ class Array {
 			delete[] tab;
 			_size = src.size();
 			tab = new T[_size];
-			for (int i=0; i < _size; i++)
+			for (unsigned int i=0; i < _size; i++)
 				tab[i] = src[i];
 		}
 
-		T&	operator[](unsigned int i) {
+		T&	operator[](unsigned int i) const {
 			if (i > _size - 1)
-				throw ;
+				throw BadIndexExecption;
 			return tab[i];
 		}
 
@@ -51,6 +53,13 @@ class Array {
 		unsigned int	size() const {
 			return _size;
 		}
+
+		// Exception
+		class BadIndexExecption : public std::exception {
+			virtual const char *what() const throw() {
+				return "BadIndexExecption";
+			}
+		} BadIndexExecption;
 };
 
 #endif // ARRAY_HPP
