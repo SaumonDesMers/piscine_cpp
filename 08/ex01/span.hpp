@@ -31,6 +31,7 @@ class Span {
 		void	addNumber(int nb);
 		int		shortestSpan();
 		int		longestSpan();
+		void	geter();
 
 		template<class iterator>
 		void	addNumber(iterator first, iterator last) {
