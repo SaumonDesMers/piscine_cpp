@@ -1,34 +1,37 @@
 #include "span.hpp"
+#include <iterator>
+#include <algorithm>
+#include <vector>
 
-Span::Span(unsigned int const n) : sizeMax(n), len(0) {
-	tab = new int[n];
-	for (unsigned int i=0; i < sizeMax; i++)
-		tab[i] = 0;
+Span::Span(unsigned int const n) : sizeMax(n) {}
+
+Span::Span(const Span &src) : sizeMax(src.sizeMax) {
+	tab = src.tab;
+	sorted = src.sorted;
 }
 
-Span::Span(const Span &src) : sizeMax(src.sizeMax), len(src.len) {
-	tab = new int[sizeMax];
-	for (unsigned int i=0; i < sizeMax; i++)
-		tab[i] = src.tab[i];
-}
-
-Span::~Span() {
-	delete[] tab;
-}
+Span::~Span() {}
 
 Span&	Span::operator=(const Span &src) {
-	delete[] tab;
 	sizeMax = src.sizeMax;
-	len = src.len;
-	tab = new int[sizeMax];
-	for (unsigned int i=0; i < sizeMax; i++)
-		tab[i] = src.tab[i];
+	tab = src.tab;
+	sorted = src.sorted;
 	return *this;
 }
 
 void	Span::addNumber(int nb) {
-	if (len == sizeMax)
-		throw NoSpaceLeftException;
-	tab[len - 1] = nb;
-	len++;
+	if (tab.size() == sizeMax)
+		throw NotEnoughSpaceException;
+	tab.push_back(nb);
+	std::vector<int>::iterator	it = std::upper_bound(sorted.begin(), sorted.end(), nb);
+	sorted.insert(it, nb);
+}
+
+int		Span::shortestSpan() {
+	std::vector<int>::iterator	it = sorted.begin();
+
+}
+
+int		Span::longestSpan() {
+	return *sorted.end() - *sorted.begin();
 }

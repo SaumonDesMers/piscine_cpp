@@ -17,8 +17,8 @@ On_Green=\033[42m
 NAME		= a.out
 
 SRC_DIR		= .
-SRCS		= $(patsubst %, $(SRC_DIR)/%, main.cpp )
-HEADER		= $(patsubst %, $(SRC_DIR)/%, )
+SRCS		= $(patsubst %, $(SRC_DIR)/%, main.cpp span.cpp)
+HEADER		= $(patsubst %, $(SRC_DIR)/%, span.hpp)
 OBJ_DIR		= obj
 OBJS		= $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
