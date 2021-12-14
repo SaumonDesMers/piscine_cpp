@@ -11,10 +11,10 @@ class Form {
 	private:
 
 		// Attributes
-		std::string name;
-		bool		_signed;
-		int		 signeGrade;
-		int		 executeGrade;
+		const std::string	name;
+		bool				_signed;
+		const int			signeGrade;
+		const int			executeGrade;
 
 		// Internal functions
 
@@ -49,6 +49,6 @@ class Form {
 		} GradeTooLowException;
 };
 
-std::ostream&	operator<<( std::ostream& os, const Form& fixed );
+std::ostream&	operator<<( std::ostream& os, const Form& form );
 
 #endif // FORM_HPP

@@ -12,8 +12,8 @@ class Bureaucrat {
 	private:
 
 		// Attributes
-		std::string	name;
-		int			grade;
+		const std::string	name;
+		int					grade;
 
 		// Internal functions
 
@@ -47,5 +47,7 @@ class Bureaucrat {
 			}
 		} GradeTooLowException;
 };
+
+std::ostream&	operator<<( std::ostream& os, const Bureaucrat& bur );
 
 #endif // BUREAUCRAT_HPP

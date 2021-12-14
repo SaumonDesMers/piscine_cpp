@@ -4,13 +4,12 @@
 
 Form::Form(void) : name("default"), _signed(false), signeGrade(1), executeGrade(1) {}
 
-Form::Form(std::string name, int newSigneGrade, int newExecuteGrade) : name(name), _signed(false) {
+Form::Form(std::string name, int newSigneGrade, int newExecuteGrade) :
+	name(name), _signed(false), signeGrade(newSigneGrade), executeGrade(newExecuteGrade) {
 	if (newSigneGrade < 1 || newExecuteGrade < 1)
 		throw GradeTooHighException;
 	if (newSigneGrade > 150 || newExecuteGrade > 150)
 		throw GradeTooLowException;
-	signeGrade = newSigneGrade;
-	executeGrade = newExecuteGrade;
 }
 
 Form::Form(const Form &src) : name(src.name), _signed(src._signed), signeGrade(src.signeGrade),
@@ -19,10 +18,7 @@ Form::Form(const Form &src) : name(src.name), _signed(src._signed), signeGrade(s
 Form::~Form() {}
 
 Form&	Form::operator=(const Form &src) {
-	name = src.name;
 	_signed = src._signed;
-	signeGrade = src.signeGrade;
-	executeGrade = src.executeGrade;
 	return *this;
 }
 

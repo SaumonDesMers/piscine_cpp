@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include <string>
 #include "Bureaucrat.hpp"
 
@@ -18,7 +19,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src) : name(src.getName()), grade(src.g
 Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat &src) {
-	name = src.getName();
 	grade = src.getGrade();
 	return *this;
 }
@@ -41,4 +41,11 @@ void	Bureaucrat::decrementGrade() {
 	if (grade + 1 > 150)
 		throw GradeTooLowException;
 	grade++;
+}
+
+std::ostream&	operator<<( std::ostream& os, const Bureaucrat& bur ) {
+	std::stringstream ss;
+	ss << bur.getName() << ", bureaucrat grade " << bur.getGrade() << ".";
+	os << ss.str();
+	return os;
 }

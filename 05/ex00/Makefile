@@ -24,12 +24,11 @@ OBJS		= $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
 $(OBJ_DIR)/%.o:$(SRC_DIR)/%.cpp
 			@mkdir -p $(OBJ_DIR)
-			@$(CC) $(CFLAGS) -I includes -c $< -o $@
-			@printf "$(On_Green) $(nc)"
+			$(CC) $(CFLAGS) -I includes -c $< -o $@
 
 $(NAME):	$(OBJS) $(HEADER)
-			@$(CC) $(CFLAGS) $(OBJS) -o $@
-			@echo "\n$(Green)*** $(UGreen)Successfully compiling $(NAME)$(Green) ***$(nc)"
+			$(CC) $(CFLAGS) $(OBJS) -o $@
+			@echo "$(Green)*** $(UGreen)Successfully compiling $(NAME)$(Green) ***$(nc)"
 
 all:		$(NAME)
 

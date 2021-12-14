@@ -5,7 +5,8 @@ int main()
 {
 	try
 	{
-		Bureaucrat b("name", 150);
+		Bureaucrat b("Bob", 150);
+		std::cout << b << std::endl;
 		b.decrementGrade();
 	}
 	catch (std::exception &e)
@@ -14,7 +15,7 @@ int main()
 	}
 	try
 	{
-		Bureaucrat b("name", 0);
+		Bureaucrat b("James", 0);
 	}
 	catch (std::exception &e)
 	{
