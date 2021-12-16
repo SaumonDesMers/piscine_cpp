@@ -9,15 +9,13 @@ class Convert {
 
 		// Attributes
 		char			charValue;
-		std::string		charString;
 		int				intValue;
-		std::string		intString;
 		float			floatValue;
-		std::string		floatString;
 		double			doubleValue;
-		std::string		doubleString;
 
 		long double		buffer;
+		int				precision;
+		std::string		str;
 
 		enum e_type {
 			CHAR,
