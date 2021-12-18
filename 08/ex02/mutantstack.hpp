@@ -7,7 +7,7 @@
 #include <stack>
 
 template<class T>
-class Mutantstack : public std::stack<T> {
+class MutantStack : public std::stack<T> {
 
 	private:
 
@@ -18,12 +18,12 @@ class Mutantstack : public std::stack<T> {
 	public:
 
 		// Constructors and destructor
-		Mutantstack(void) : std::stack<T>() {}
-		Mutantstack(const Mutantstack &src) : std::stack<T>(src) {}
-		~Mutantstack();
+		MutantStack(void) : std::stack<T>() {}
+		MutantStack(const MutantStack &src) : std::stack<T>(src) {}
+		~MutantStack() {}
 
 		// Operator overloads
-		Mutantstack&	operator=(const Mutantstack &src);
+		MutantStack&	operator=(const MutantStack &src);
 
 		// Member functions
 
@@ -35,6 +35,10 @@ class Mutantstack : public std::stack<T> {
 		iterator end(void) { return this->c.end(); }
 		reverse_iterator rbegin(void) { return this->c.rbegin(); }
 		reverse_iterator rend(void) { return this->c.rend(); }
+
+		T &operator[] (int n) {
+			return this->c[n];
+		}
 
 };
 

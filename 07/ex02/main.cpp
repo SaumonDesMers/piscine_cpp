@@ -29,6 +29,7 @@ int main(int, char**)
 			return 1;
 		}
 	}
+
 	try
 	{
 		numbers[-2] = 0;
@@ -47,9 +48,8 @@ int main(int, char**)
 	}
 
 	for (int i = 0; i < MAX_VAL; i++)
-	{
 		numbers[i] = std::rand();
-	}
+
 	delete [] mirror;
 	return 0;
 }
