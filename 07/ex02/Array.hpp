@@ -41,6 +41,7 @@ class Array {
 			tab = new T[_size];
 			for (unsigned int i=0; i < _size; i++)
 				tab[i] = src[i];
+			return *this;
 		}
 
 		T&	operator[](unsigned int i) const {

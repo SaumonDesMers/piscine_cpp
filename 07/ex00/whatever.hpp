@@ -5,11 +5,11 @@
 #include <iostream>
 
 template <class T>
-void	swap(T *a, T *b)
+void	swap(T &a, T &b)
 {
-	T tmp = *a;
-	*a = *b;
-	*b = tmp; 
+	T tmp = a;
+	a = b;
+	b = tmp;
 }
 
 template <class T>
@@ -30,7 +30,7 @@ void	test(T a, T b, std::string type)
 	std::cout << "---------- " << type << " ----------" << std::endl;
 	std::cout << "first value:  " << a << std::endl;
 	std::cout << "second value: " << b << std::endl;
-	::swap(&a, &b);
+	::swap(a, b);
 	std::cout << "swap values" << std::endl;
 	std::cout << "first value:  " << a << std::endl;
 	std::cout << "second value: " << b << std::endl;
