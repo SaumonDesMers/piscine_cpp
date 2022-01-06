@@ -39,6 +39,21 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
+
+	try
+	{
+		Span sp = Span(5);
+		std::vector<int>	v;
+
+		for (int i=0; i<10; i++)
+			v.push_back(0);
+		sp.addNumber(v.begin(), v.end());
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	
 	try
 	{
 		Span sp = Span(3);

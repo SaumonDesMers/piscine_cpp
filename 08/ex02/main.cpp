@@ -48,18 +48,6 @@ int main()
 		++it;
 	}
 
-	std::cout << "\nPrint stack with []:" << std::endl;
-	for (int i=0; i<85; i++)
-		std::cout << mstack[i] << " ";
-
-	std::cout << "\nPrint stack with top and pop:" << std::endl;
-	for (int i=0; i<85; i++)
-	{
-		std::cout << mstack.top() << " ";
-		mstack.pop();
-	}
-
-
 	std::cout << "\n\n----- List -----\n" << std::endl;
 
 	std::list<int> list;
@@ -68,18 +56,18 @@ int main()
 
 	std::cout << "Push 100 numbers..." << std::endl;
 	for (int i=0; i<100; i++)
-		list.push_front(array[i]);
+		list.push_back(array[i]);
 
 	std::cout << "Is list empty: " << list.empty() << std::endl;
 
-	std::cout << "Top value: " << list.front() << std::endl;
+	std::cout << "Top value: " << list.back() << std::endl;
 	std::cout << "Size: " << list.size() << std::endl;
 
 	std::cout << "Pop 15 numbers..." << std::endl;
 	for (int i=0; i<15; i++)
-		list.pop_front();
+		list.pop_back();
 
-	std::cout << "Top value: " << list.front() << std::endl;
+	std::cout << "Top value: " << list.back() << std::endl;
 	std::cout << "Size: " << list.size() << std::endl;
 
 	std::list<int>::iterator it_list = list.begin();
